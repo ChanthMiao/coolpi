@@ -1,0 +1,12 @@
+[Unit]
+Description=a really simple cooling program for the Raspberry Pi
+[Service]
+Type=forking
+User=root
+Group=root
+PIDFile=/var/run/coolpi.pid
+ExecStart=/usr/local/bin/coolpi
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill $MAINPID
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+{
+    "con": 4,
+    "upperLimit": 48000,
+    "onMsec": 20000,
+    "lowerLimit": 44000,
+    "offMsec": 2000,
+    "waitMsec": 1000
+}

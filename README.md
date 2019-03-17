@@ -2,7 +2,7 @@
 
 a really simple cooling program for the Raspberry Pi, written in C.
 
-## dependence
+## Dependence
 
 This program is base on wiringPi. Before your trying to build it, do check the installation of wiringPi with the command below.
 
@@ -25,7 +25,7 @@ Raspberry Pi Details:
   * This Raspberry Pi supports user-level GPIO access.
 ```
 
-## hardware
+## Hardware
 
 ### Pin Number
 
@@ -56,7 +56,21 @@ Raspberry Pi Details:
 
 ![coolpi.png](coolpi.png)
 
-The default wiringPi pin that connected to the base of transistor is 4, you can custom it by write your own configure file.
+**The default wiringPi pin that connected to the base of transistor is 4, you can custom it by write your own configure file.**
+
+## Build && install
+
+Easy with a few commad:
+
+```bash
+git clone https://github.com/ChanthMiao/coolpi.git
+cd coolpi && make
+sudo make install
+```
+
+## Usage
+
+Well, now the the coolpi should be running as a linux daemon, if everything is ok. This program has maintain a set of defalut configure values that passed my personal test. Yet, you may offer a set of customed values through writting your own configure file.
 
 *The comments is not supported in the configure file. I offer a sample named '/etc/coolpi/sample.json'.*
 
@@ -80,22 +94,28 @@ The default wiringPi pin that connected to the base of transistor is 4, you can 
 |offMsec|continuous waiting time of the fan off (ms)|
 |waitMsec|continuous waiting time of the fan when the temperature is in the middle segment (ms)|
 
-## build && install
-
-Easy with a few commad:
+Then, modify the line 8 of '/lib/systemd/system/coolpi.service' to the content blow:
 
 ```bash
-git clone https://github.com/ChanthMiao/coolpi.git
-cd coolpi && make
-sudo make install
+ExecStart=/usr/local/bin/coolpi -c /etc/coolpi/$YOUR_CONFIGURE
+```
+
+Reload the '/lib/systemd/system/coolpi.service' with command here:
+```bash
+sudo systemctl daemon-reload
 ```
 
 All thing done, have fun with you raspberry Pi 3B+ !
 
-### Note
+## Note
 
-If you want to uninstall the coolpi, just one command is needed.
+- If you want to uninstall the coolpi, just one command is needed.
 
-```bash
-sudo /etc/coolpi/uninstall.sh
-```
+  ```bash
+  sudo /etc/coolpi/uninstall.sh
+  ```
+
+- Only after your modification of '/lib/systemd/system/coolpi.service', the command "`sudo systemctl daemon-reload`" is needed. If you just want reload your customed configure file, do run the command blow:
+  ```bash
+  sudo systemctl reload coolpi.service
+  ```

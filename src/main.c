@@ -105,7 +105,7 @@ coolpi_end:
 /*Offer feedback fuctions.*/
 void showBaseInfo(const char *m_type)
 {
-    if (m_type != NULL)
+    if (m_type == NULL)
     {
         printf("Usage:\n\tcoolpi [option] [value]\n");
         printf("[option]:\n\t[-v] [--verion]:\tshow version info.\n\t[-h] [--help]:\tshow details of options.\n\t[-c <file>] [--configure=<file>]:\tuse customed configure.\n");

@@ -5,7 +5,7 @@ BINDIR = $(PREFIX)/bin
 CONFDIR = /etc/coolpi
 SERVICEDIR = /lib/systemd/system
 SERVICEFILE = ./coolpi.service
-CONFFILE = ./tools/sample.json
+TOOLDIR = ./tools
 
 INSTALL = cp -a
 
@@ -26,8 +26,9 @@ clean:
 
 install:
 	mkdir -p $(CONFDIR)
+	@chmod a+x tools/uninstall.sh
 	$(INSTALL) $(BUILDDIR)/$(target) $(BINDIR)
-	$(INSTALL) $(CONFFILE) $(CONFDIR)
+	$(INSTALL) $(TOOLDIR)/* $(CONFDIR)
 	$(INSTALL) $(SERVICEFILE) $(SERVICEDIR)
 	@echo "enable the service"
 	@systemctl daemon-reload

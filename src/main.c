@@ -70,10 +70,10 @@ int main(int argc, char *argv[])
         goto coolpi_end;
     }
 core:
-    writeMiniLog(INFO, "Trying to run as linux daemon.\n");
+    writeMiniLog(INFO, "Trying to run as linux daemon.");
     if (daemon(0, 1) == -1)
     {
-        writeMiniLog(ERROR, "Error detected within daemon(), since multi-instances running at the same time is not allowed.\n");
+        writeMiniLog(ERROR, "Error detected within daemon(), since multi-instances running at the same time is not allowed.");
         exit(1);
     }
     /*Check Pid first.*/

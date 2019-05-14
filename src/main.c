@@ -1,11 +1,13 @@
 
 #define _DEFAULT_SOURCE
 #include "core.h"
+#include "miniLog.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <getopt.h>
-#define VERSION "v1.0.0"
+#include <signal.h>
+#define VERSION "v1.1.0"
 #define NULL_DEVICE "/dev/null"
 #define OPT_V 1
 #define OPT_H 1 << 1

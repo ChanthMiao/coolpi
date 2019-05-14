@@ -7,19 +7,6 @@
 #ifndef __USE_GNU
 #define __USE_GNU 1
 #endif
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <time.h>
-#include <linux/limits.h>
-#include <wiringPi.h>
-#include "cJSON.h"
-#include "miniLog.h"
 
 /*offer default values*/
 #define D_CON 4

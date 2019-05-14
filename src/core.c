@@ -1,3 +1,14 @@
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wiringPi.h>
+#include "cJSON.h"
 #include "core.h"
 #include "miniLog.h"
 

@@ -1,16 +1,6 @@
 #ifndef _MINI_LOG_H_
 #define _MINI_LOG_H_
 
-#include <unistd.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
 /*Define log level.*/
 #define INFO 1
 #define WARN 2

@@ -1,5 +1,5 @@
 BUILDDIR = ./bin
-CFLAGS = -lwiringPi
+CFLAGS = -lwiringPi -O3
 PREFIX = /usr/local
 BINDIR = $(PREFIX)/bin
 CONFDIR = /etc/coolpi
